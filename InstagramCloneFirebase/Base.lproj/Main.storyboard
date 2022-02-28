@@ -105,7 +105,10 @@
                                 <rect key="frame" x="149" y="767" width="116" height="31"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Paylaş"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Ekle"/>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="o1a-yd-B7f" eventType="touchUpInside" id="yGt-J1-L0G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oNI-PL-j7q"/>
@@ -124,6 +127,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ekle" image="plus" catalog="system" id="DFw-r0-MXO"/>
+                    <connections>
+                        <outlet property="commentText" destination="J9p-Oj-noE" id="FWG-t1-4Wl"/>
+                        <outlet property="imageView" destination="VWk-HD-53w" id="QK2-rz-egj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nl-sU-Wx6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

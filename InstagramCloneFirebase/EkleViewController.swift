@@ -6,24 +6,62 @@
 //
 
 import UIKit
+import Firebase
 
-class EkleViewController: UIViewController {
+class EkleViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
+    @IBOutlet weak var commentText: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //image gesture reconginizer
+        imageView.isUserInteractionEnabled = true
+        let imageRecognizer = UITapGestureRecognizer(target: self, action: #selector(choosePhoto))
+        imageView.addGestureRecognizer(imageRecognizer)
+    }
+    @IBAction func uploadPhoto(_ sender: Any) {
+        
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        
+        let imageFolder = storageReference.child("Images")
+        
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5){
+            let uuid = UUID().uuidString
+            let imageReference = imageFolder.child("\(uuid).jpg")
+            
+            imageReference.putData(data, metadata: nil) { metadata, error in
+                if error != nil {
+                    self.makeAlert(titleInput: "Hata", messageInput: error?.localizedDescription ?? "Resim Yüklenemedi.")
+                }else{
+                    imageReference.downloadURL { url, error in
+                        if error == nil {
+                            let imageUrl = url?.absoluteString
+                        }
+                    }
+                }
+                
+            }
+        }
+            
+        
+    }
+    @objc func choosePhoto(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
+    }
+    func makeAlert(titleInput : String , messageInput : String){
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
