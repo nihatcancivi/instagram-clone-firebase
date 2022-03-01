@@ -37,6 +37,19 @@ class EkleViewController: UIViewController , UIImagePickerControllerDelegate , U
                     imageReference.downloadURL { url, error in
                         if error == nil {
                             let imageUrl = url?.absoluteString
+                            //database
+                            let firestoreDatabase = Firestore.firestore()
+                            var firestoreReference : DocumentReference? = nil
+                            
+                            let firestorePost = ["imageUrl" : imageUrl!, "postedBy" : Auth.auth().currentUser!.email!,"date" : FieldValue.serverTimestamp(), "postComment": self.commentText.text!,"likes" : 0] as [String : Any]
+                            
+                            firestoreReference = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { error in
+                                if error != nil {
+                                    self.makeAlert(titleInput: "Hata", messageInput: error?.localizedDescription ?? "Hata")
+                                }else{
+                                    self.tabBarController?.selectedIndex = 0
+                                }
+                            })
                         }
                     }
                 }

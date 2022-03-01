@@ -10,6 +10,7 @@
 		2135C73327CBF67200EF9C7B /* AkisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135C73227CBF67200EF9C7B /* AkisViewController.swift */; };
 		2135C73527CBF6A600EF9C7B /* EkleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135C73427CBF6A600EF9C7B /* EkleViewController.swift */; };
 		2135C73727CBF6BF00EF9C7B /* AyarlarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135C73627CBF6BF00EF9C7B /* AyarlarViewController.swift */; };
+		217498AF27CE251A0093F87A /* AkisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217498AE27CE251A0093F87A /* AkisCell.swift */; };
 		21872A8A27CBC9EC005A7B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21872A8927CBC9EC005A7B6C /* AppDelegate.swift */; };
 		21872A8C27CBC9EC005A7B6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21872A8B27CBC9EC005A7B6C /* SceneDelegate.swift */; };
 		21872A8E27CBC9EC005A7B6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21872A8D27CBC9EC005A7B6C /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		2135C73227CBF67200EF9C7B /* AkisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkisViewController.swift; sourceTree = "<group>"; };
 		2135C73427CBF6A600EF9C7B /* EkleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EkleViewController.swift; sourceTree = "<group>"; };
 		2135C73627CBF6BF00EF9C7B /* AyarlarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyarlarViewController.swift; sourceTree = "<group>"; };
+		217498AE27CE251A0093F87A /* AkisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkisCell.swift; sourceTree = "<group>"; };
 		21872A8627CBC9EC005A7B6C /* InstagramCloneFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramCloneFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21872A8927CBC9EC005A7B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21872A8B27CBC9EC005A7B6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				2135C73227CBF67200EF9C7B /* AkisViewController.swift */,
 				2135C73427CBF6A600EF9C7B /* EkleViewController.swift */,
 				2135C73627CBF6BF00EF9C7B /* AyarlarViewController.swift */,
+				217498AE27CE251A0093F87A /* AkisCell.swift */,
 			);
 			path = InstagramCloneFirebase;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				2135C73527CBF6A600EF9C7B /* EkleViewController.swift in Sources */,
 				2135C73727CBF6BF00EF9C7B /* AyarlarViewController.swift in Sources */,
 				21872A8E27CBC9EC005A7B6C /* ViewController.swift in Sources */,
+				217498AF27CE251A0093F87A /* AkisCell.swift in Sources */,
 				21872A8A27CBC9EC005A7B6C /* AppDelegate.swift in Sources */,
 				2135C73327CBF67200EF9C7B /* AkisViewController.swift in Sources */,
 				21872A8C27CBC9EC005A7B6C /* SceneDelegate.swift in Sources */,
